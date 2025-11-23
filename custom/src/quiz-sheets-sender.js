@@ -1,6 +1,7 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.1.4/+esm';
+// import { LitElement, html } from 'https://cdn.jsdelivr.net/npm/lit@3.1.4/+esm';
+import { HAXCMSLitElementTheme, css, unsafeCSS, html, store, autorun, toJS } from "@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";
 
-class QuizSheetsSender extends LitElement {
+class QuizSheetsSender extends HAXCMSLitElementTheme {
     static properties = {
         webAppUrl: { type: String, attribute: 'web-app-url' },
         listen: { type: Boolean, reflect: true },
