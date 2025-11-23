@@ -51,6 +51,22 @@
       }
     },
     {
+      "id": "item-c419e0fe-38d9-4301-8152-b02fc60adde7",
+      "indent": 0,
+      "location": "pages/item-c419e0fe-38d9-4301-8152-b02fc60adde7/index.html",
+      "slug": "welcome/page",
+      "order": 0,
+      "parent": "item-20122102-72a9-436d-8930-676bc35f36ff",
+      "title": "Page",
+      "description": "",
+      "metadata": {
+        "created": 1763901734,
+        "updated": 1763901734,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
       "id": "item-f45a93c9-dd39-4b5c-b8cb-f966a832505c",
       "indent": 0,
       "location": "pages/item-f45a93c9-dd39-4b5c-b8cb-f966a832505c/index.html",

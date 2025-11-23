@@ -28,9 +28,74 @@ class CustomEval3Theme extends PolarisFlexTheme {
     return [
       super.styles,
       css`
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+
         :host {
           display: block;
+          font-family: "Merriweather", serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+          font-variation-settings: "wdth" 100;
         }
+
+            /* Desktop and tablet layout */
+            aside {
+          float: left;
+          width: 240px;
+        }
+        
+        aside section h4 {
+          font-size: 36px;
+          margin: var(--ddd-spacing-0) var(--ddd-spacing-0) var(--ddd-spacing-6) var(--ddd-spacing-0);
+          text-transform: lowercase;
+          font-family: "Merriweather", serif;
+          font-weight: 300;
+        }
+
+        aside section {
+          background-color: #faf9bf;
+          border-radius: 3px;
+          margin-bottom: var(--ddd-spacing-10);
+          padding: 0px var(--ddd-spacing-10) var(--ddd-spacing-10) 0px;
+        }
+
+        site-children-block {
+          --site-children-block-border-bottom: lightblue 2px solid;
+          --site-children-block-li-padding: 8px 0;
+          --site-children-block-link-hover-color: rgb(0, 95, 169);
+          --site-children-block-active-border-left: rgb(0, 95, 169) 3px solid;
+          --site-children-block-link-active-color: rgb(0, 30, 68);
+          font-family: "Merriweather", serif;
+          font-weight: 400;
+          font-size: 16px;
+        }
+        
+        /* Mobile responsive layout */
+        @media (max-width: 768px) {
+          aside {
+            float: none;
+            width: 100%;
+            clear: both;
+          }
+          
+          aside[role="complementary"] {
+            display: none; /* Sembunyikan sidebar di layar kecil */
+          }
+          
+          aside section {
+            margin-bottom: var(--ddd-spacing-5);
+          }
+        }
+        
+        @media (min-width: 769px) {
+          aside[role="complementary"] {
+            display: block; /* Tampilkan sidebar di layar besar */
+          }
+        }
+
       `,
     ];
   }
@@ -40,6 +105,26 @@ class CustomEval3Theme extends PolarisFlexTheme {
    */
   renderHeaderSlot() {
     return html``
+  }
+
+  
+  renderSideBar() {
+    return html`
+    <aside
+          role="complementary"
+          aria-label="Primary Sidebar"
+          itemtype="http://schema.org/WPSideBar"
+          part="page-primary-sidebar"
+        >
+          <section>
+            <site-children-block
+              part="page-children-block"
+              dynamic-methodology="ancestor"
+            ></site-children-block>
+          </section>
+        </aside>
+    
+    `
   }
 
   renderFooterContactInformation() {
