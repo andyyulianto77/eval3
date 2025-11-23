@@ -1,1 +1,4 @@
-// custom comment script here
+import{css as i,html as r}from"@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";import{PolarisFlexTheme as u}from"@haxtheweb/polaris-theme/lib/polaris-flex-theme.js";import"@haxtheweb/haxcms-elements/lib/ui-components/blocks/site-children-block.js";var o=Object.freeze,d=Object.defineProperty,e=(t,p)=>o(d(t,"raw",{value:o(t.slice())}));/**
+* Copyright 2025 andyyulianto77
+* @license Apache-2.0, see License.md for full text.
+*/var n,s,a,l,c;class m extends u{static get styles(){return[super.styles,i(n||(n=e(["\n        :host {\n          display: block;\n        }\n      "])))]}renderHeaderSlot(){return r(s||(s=e([""])))}renderFooterContactInformation(){return r(a||(a=e([""])))}renderFooterSecondarySlot(){return r(l||(l=e([""])))}renderFooterPrimarySlot(){return r(c||(c=e([""])))}static get tag(){return"custom-eval3-theme"}constructor(){super()}}customElements.define(m.tag,m);
