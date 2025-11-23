@@ -1,0 +1,86 @@
+{
+  "id": "28592538-323a-46da-a0bd-1cd0e7c219eb",
+  "title": "eval3",
+  "author": "",
+  "description": "own course",
+  "license": "by-sa",
+  "metadata": {
+    "author": {},
+    "site": {
+      "name": "eval3",
+      "logo": "assets/banner.jpg",
+      "settings": {
+        "lang": "en-US",
+        "publishPagesOn": true,
+        "canonical": true
+      },
+      "created": 1763901372,
+      "updated": 1763901372,
+      "git": {
+        "vendor": "github",
+        "branch": "gh-pages"
+      }
+    },
+    "theme": {
+      "element": "custom-eval3-theme",
+      "path": "./custom/build/custom.es6.js",
+      "name": "CustomEval3Theme"
+    },
+    "node": {
+      "fields": {}
+    },
+    "build": {
+      "version": "11.0.5",
+      "structure": "course",
+      "type": "own"
+    }
+  },
+  "items": [
+    {
+      "id": "item-20122102-72a9-436d-8930-676bc35f36ff",
+      "indent": 0,
+      "location": "pages/item-20122102-72a9-436d-8930-676bc35f36ff/index.html",
+      "slug": "welcome",
+      "order": 0,
+      "parent": null,
+      "title": "Welcome to eval3",
+      "description": "",
+      "metadata": {
+        "created": 1763901371,
+        "updated": 1763901371
+      }
+    },
+    {
+      "id": "item-c419e0fe-38d9-4301-8152-b02fc60adde7",
+      "indent": 0,
+      "location": "pages/item-c419e0fe-38d9-4301-8152-b02fc60adde7/index.html",
+      "slug": "welcome/page",
+      "order": 0,
+      "parent": "item-20122102-72a9-436d-8930-676bc35f36ff",
+      "title": "Page",
+      "description": "",
+      "metadata": {
+        "created": 1763901734,
+        "updated": 1763901734,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "id": "item-f45a93c9-dd39-4b5c-b8cb-f966a832505c",
+      "indent": 0,
+      "location": "pages/item-f45a93c9-dd39-4b5c-b8cb-f966a832505c/index.html",
+      "slug": "page",
+      "order": 1,
+      "parent": null,
+      "title": "Page",
+      "description": "",
+      "metadata": {
+        "created": 1763901410,
+        "updated": 1763901410,
+        "images": [],
+        "videos": []
+      }
+    }
+  ]
+}
