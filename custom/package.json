@@ -1,6 +1,7 @@
 {
   "name": "haxcms-customizations",
   "version": "0.0.0",
+  "type": "module",
   "description": "Custom HAXcms additions, either of a theme or other elements you want to use in this site",
   "author": "HAXTheWeb",
   "homepage": "https://github.com/haxtheweb/haxcms",
