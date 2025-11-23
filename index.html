@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <script>
     // attempt to correctly set the base without knowing where we're installed fully...
@@ -25,7 +26,7 @@
     {
       "scopes": {
         "./custom/build/": {
-          "@haxtheweb/": "./build/es6/node_modules/@haxtheweb/"
+          "@haxtheweb/": "https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/"
         }
       }
     }
@@ -44,13 +45,24 @@
   <link rel="preload" href="./build.js" as="script" />
   <link rel="preload" href="./build-haxcms.js" as="script" />
   <link rel="preload" href="./wc-registry.json" as="fetch" crossorigin="anonymous" fetchpriority="high" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" as="script" crossorigin="anonymous" />
-  <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" as="script" crossorigin="anonymous" />
-  <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" as="script" crossorigin="anonymous" />
-  <link rel="modulepreload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" />
-  <link rel="preload" href="./build/es6/node_modules/@haxtheweb/haxcms-elements/lib/base.css" as="style" />
+  <link rel="preload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js"
+    as="script" crossorigin="anonymous" />
+  <link rel="modulepreload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/dynamic-import-registry/dynamic-import-registry.js" />
+  <link rel="preload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js"
+    as="script" crossorigin="anonymous" />
+  <link rel="modulepreload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/wc-autoload/wc-autoload.js" />
+  <link rel="preload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js"
+    as="script" crossorigin="anonymous" />
+  <link rel="modulepreload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/haxcms-elements/lib/core/themes/haxcms-basic-theme.js" />
+  <link rel="preload"
+    href="https://cdn.webcomponents.psu.edu/cdn/build/es6/node_modules/@haxtheweb/haxcms-elements/lib/base.css"
+    as="style" />
   <meta name="generator" content="HAXcms">
   <link rel="manifest" href="manifest.json">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
@@ -75,8 +87,9 @@
   <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
   <meta name="twitter:description" property="twitter:description" content="" />
   <meta name="twitter:image" property="twitter:image" content="" />
-  <meta rel="cc:license" href="https://creativecommons.org/licenses/by-sa/4.0/" content="License: Creative Commons: Attribution Share a like"/>
-  
+  <meta rel="cc:license" href="https://creativecommons.org/licenses/by-sa/4.0/"
+    content="License: Creative Commons: Attribution Share a like" />
+
   <!-- Service worker disabled via settings -->
   <style>
     body {
@@ -84,6 +97,7 @@
       padding: 0;
       min-height: 98vh;
     }
+
     haxcms-site-builder:not([theme-loaded]) * {
       margin-top: 100px;
       display: block;
@@ -91,14 +105,17 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     haxcms-site-builder[theme-loaded] .haxcms-theme-element:not(:defined) {
       margin-top: 100px;
     }
+
     haxcms-site-builder[theme-loaded] .haxcms-theme-element:not(:defined) * {
       max-width: 50vw;
       margin-left: auto;
       margin-right: auto;
     }
+
     haxcms-site-builder[theme-loaded] .haxcms-theme-element:not(:defined) *:not(:defined) {
       display: block;
       min-height: 50px;
@@ -109,10 +126,12 @@
     haxcms-site-builder {
       display: block;
     }
+
     body {
       background-color: #ffffff;
-      color: rgba(0,0,0, 0.2);
+      color: rgba(0, 0, 0, 0.2);
     }
+
     #loading {
       background-color: #ffffff;
       bottom: 0px;
@@ -123,18 +142,21 @@
       top: 0px;
       z-index: 99999999;
     }
+
     #loading.loaded {
       animation: fade-out .1s ease-in-out;
       animation-fill-mode: forwards;
     }
+
     #loading div.messaging {
-      color: rgba(0,0,0, 0.2);
+      color: rgba(0, 0, 0, 0.2);
       left: 0px;
       position: absolute;
       right: 0px;
       text-align: center;
       top: 25vh;
     }
+
     #loading div.messaging h1 {
       font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif !important;
       line-height: 2;
@@ -149,67 +171,78 @@
       width: 100%;
       margin: auto;
     }
+
     .progress-line {
-      background-color: rgba(0,0,0, 0.1);
+      background-color: rgba(0, 0, 0, 0.1);
       display: -webkit-flex;
       display: flex;
       width: 50vw;
     }
+
     .progress-line:before {
       background-color: #FF2222;
       content: '';
       animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
+
     @keyframes running-progress {
       0% {
         margin-left: 0px;
         margin-right: 100%;
       }
+
       50% {
         margin-left: 25%;
         margin-right: 0%;
       }
+
       100% {
         margin-left: 100%;
         margin-right: 0;
       }
     }
+
     @keyframes fade-out {
       0% {
         opacity: 1;
       }
+
       99% {
         opacity: 0;
       }
+
       100% {
         opacity: 0;
       }
     }
+
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #333333;
-        color: rgba(255,255,255, 0.2);
+        color: rgba(255, 255, 255, 0.2);
       }
+
       #loading {
         background-color: #333333;
       }
+
       #loading div.messaging {
-        color: rgba(255,255,255, 0.2);
+        color: rgba(255, 255, 255, 0.2);
       }
     }
   </style>
   <script id="loadingscript">
     globalThis.dataLayer = globalThis.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    globalThis.addEventListener('haxcms-ready', function(e) {
+    globalThis.addEventListener('haxcms-ready', function (e) {
       var s = document.createElement('script');
       s.async = true;
       document.body.appendChild(s);
       // give the web components a second to build
-      setTimeout(function() {
+      setTimeout(function () {
         document.querySelector('#loading').classList.add('loaded');
-        setTimeout(function() {
+        setTimeout(function () {
           if (globalThis.HAXCMS.requestAvailability().store.getManifest()) {
             var gaid = globalThis.HAXCMS.requestAvailability().store.getManifest().metadata.site.settings.gaID || null;
             if (gaid) {
@@ -225,7 +258,9 @@
     });
   </script>
 </head>
-<body vocab="http://schema.org/" prefix="oer:http://oerschema.org cc:http://creativecommons.org/ns dc:http://purl.org/dc/terms/">
+
+<body vocab="http://schema.org/"
+  prefix="oer:http://oerschema.org cc:http://creativecommons.org/ns dc:http://purl.org/dc/terms/">
   <section role="alert" id="loading" aria-busy="true">
     <div class="messaging">
       <div class="progress-line"></div>
@@ -235,8 +270,9 @@
   <haxcms-site-builder id="site" file="site.json?2GQKWcJ3ni0xrL2X4_Dw_Sr9SeXqY2Sk3XblmvHVArA"></haxcms-site-builder>
   <script>
     globalThis.MicroFrontendRegistryConfig = globalThis.MicroFrontendRegistryConfig || {};
-    globalThis.HAXCMSContext="php";globalThis.__appCDN="./";</script>
+    globalThis.HAXCMSContext = "php"; globalThis.__appCDN = "./";</script>
   <script src="./build-haxcms.js"></script>
   <script src="./build.js"></script>
 </body>
+
 </html>
